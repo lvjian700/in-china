@@ -15,6 +15,9 @@
 		3C814FB51B85CB4E00E30055 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C814FB41B85CB4E00E30055 /* MapViewController.m */; };
 		3C814FB81B85CBE800E30055 /* LocationMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C814FB71B85CBE800E30055 /* LocationMapView.m */; };
 		14077C511B85DACF00F3D96E /* SpeakHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 14077C501B85DACF00F3D96E /* SpeakHelper.m */; };
+		14077C541B85E9DD00F3D96E /* shopping.json in Resources */ = {isa = PBXBuildFile; fileRef = 14077C531B85E9DD00F3D96E /* shopping.json */; };
+		14077C5B1B85F69D00F3D96E /* JSONDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 14077C5A1B85F69D00F3D96E /* JSONDataHelper.m */; };
+		14077C5D1B85FA8600F3D96E /* hospital.json in Resources */ = {isa = PBXBuildFile; fileRef = 14077C5C1B85FA8600F3D96E /* hospital.json */; };
 		3CD74FAB1B85BA4000FE5705 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD74FAA1B85BA4000FE5705 /* main.m */; };
 		3CD74FAE1B85BA4000FE5705 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD74FAD1B85BA4000FE5705 /* AppDelegate.m */; };
 		3CD74FB41B85BA4000FE5705 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CD74FB21B85BA4000FE5705 /* Main.storyboard */; };
@@ -37,6 +40,10 @@
 /* Begin PBXFileReference section */
 		14077C4F1B85DACF00F3D96E /* SpeakHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakHelper.h; sourceTree = "<group>"; };
 		14077C501B85DACF00F3D96E /* SpeakHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakHelper.m; sourceTree = "<group>"; };
+		14077C531B85E9DD00F3D96E /* shopping.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shopping.json; sourceTree = "<group>"; };
+		14077C591B85F69D00F3D96E /* JSONDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONDataHelper.h; sourceTree = "<group>"; };
+		14077C5A1B85F69D00F3D96E /* JSONDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONDataHelper.m; sourceTree = "<group>"; };
+		14077C5C1B85FA8600F3D96E /* hospital.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hospital.json; sourceTree = "<group>"; };
 		1AE9FE3159E536A61F8A18B6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C0956281B85FCC0000F36D5 /* ICLocationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICLocationAnnotation.h; sourceTree = "<group>"; };
 		3C0956291B85FCC0000F36D5 /* ICLocationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICLocationAnnotation.m; sourceTree = "<group>"; };
@@ -87,11 +94,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		14077C4E1B85DA8800F3D96E /* helpers */ = {
+		14077C521B85E9DD00F3D96E /* data */ = {
 			isa = PBXGroup;
 			children = (
-				14077C4F1B85DACF00F3D96E /* SpeakHelper.h */,
-				14077C501B85DACF00F3D96E /* SpeakHelper.m */,
+				14077C5C1B85FA8600F3D96E /* hospital.json */,
+				14077C531B85E9DD00F3D96E /* shopping.json */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		14077C551B85F5CC00F3D96E /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				14077C591B85F69D00F3D96E /* JSONDataHelper.h */,
+				14077C5A1B85F69D00F3D96E /* JSONDataHelper.m */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -159,7 +175,8 @@
 		3CD74FA71B85BA4000FE5705 /* in-china */ = {
 			isa = PBXGroup;
 			children = (
-				14077C4E1B85DA8800F3D96E /* helpers */,
+				14077C551B85F5CC00F3D96E /* helpers */,
+				14077C521B85E9DD00F3D96E /* data */,
 				3C814FAA1B85BEA500E30055 /* macro */,
 				3C814FAB1B85BEA500E30055 /* models */,
 				3C814FAC1B85BEA500E30055 /* views */,
@@ -310,7 +327,9 @@
 			files = (
 				3C0956331B86AF39000F36D5 /* Places.storyboard in Resources */,
 				3CD74FB41B85BA4000FE5705 /* Main.storyboard in Resources */,
+				14077C541B85E9DD00F3D96E /* shopping.json in Resources */,
 				3CD74FB91B85BA4000FE5705 /* LaunchScreen.xib in Resources */,
+				14077C5D1B85FA8600F3D96E /* hospital.json in Resources */,
 				3CD74FB61B85BA4000FE5705 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +405,7 @@
 				3C0956361B86B134000F36D5 /* PlaceTableViewCell.m in Sources */,
 				3C814FB81B85CBE800E30055 /* LocationMapView.m in Sources */,
 				3CD74FAB1B85BA4000FE5705 /* main.m in Sources */,
+				14077C5B1B85F69D00F3D96E /* JSONDataHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
