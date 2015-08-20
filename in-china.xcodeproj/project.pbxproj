@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C814FB11B85CA5500E30055 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C814FB01B85CA5500E30055 /* MapKit.framework */; };
 		3CD74FAB1B85BA4000FE5705 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD74FAA1B85BA4000FE5705 /* main.m */; };
 		3CD74FAE1B85BA4000FE5705 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD74FAD1B85BA4000FE5705 /* AppDelegate.m */; };
-		3CD74FB11B85BA4000FE5705 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD74FB01B85BA4000FE5705 /* ViewController.m */; };
 		3CD74FB41B85BA4000FE5705 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CD74FB21B85BA4000FE5705 /* Main.storyboard */; };
 		3CD74FB61B85BA4000FE5705 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CD74FB51B85BA4000FE5705 /* Images.xcassets */; };
 		3CD74FB91B85BA4000FE5705 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CD74FB71B85BA4000FE5705 /* LaunchScreen.xib */; };
@@ -31,13 +31,12 @@
 		1AE9FE3159E536A61F8A18B6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C814FAE1B85BF5900E30055 /* HelpersMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelpersMacro.h; sourceTree = "<group>"; };
 		3C814FAF1B85BFA700E30055 /* ConstantMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantMacro.h; sourceTree = "<group>"; };
+		3C814FB01B85CA5500E30055 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3CD74FA51B85BA4000FE5705 /* in-china.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "in-china.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CD74FA91B85BA4000FE5705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CD74FAA1B85BA4000FE5705 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3CD74FAC1B85BA4000FE5705 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3CD74FAD1B85BA4000FE5705 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3CD74FAF1B85BA4000FE5705 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3CD74FB01B85BA4000FE5705 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3CD74FB31B85BA4000FE5705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3CD74FB51B85BA4000FE5705 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3CD74FB81B85BA4000FE5705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C814FB11B85CA5500E30055 /* MapKit.framework in Frameworks */,
 				6EB10E0591EC096187303359 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +90,13 @@
 			path = views;
 			sourceTree = "<group>";
 		};
+		3C814FB21B85CAF200E30055 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
 		3CD74F9C1B85BA4000FE5705 = {
 			isa = PBXGroup;
 			children = (
@@ -116,10 +123,9 @@
 				3C814FAA1B85BEA500E30055 /* macro */,
 				3C814FAB1B85BEA500E30055 /* models */,
 				3C814FAC1B85BEA500E30055 /* views */,
+				3C814FB21B85CAF200E30055 /* controllers */,
 				3CD74FAC1B85BA4000FE5705 /* AppDelegate.h */,
 				3CD74FAD1B85BA4000FE5705 /* AppDelegate.m */,
-				3CD74FAF1B85BA4000FE5705 /* ViewController.h */,
-				3CD74FB01B85BA4000FE5705 /* ViewController.m */,
 				3CD74FB21B85BA4000FE5705 /* Main.storyboard */,
 				3CD74FB51B85BA4000FE5705 /* Images.xcassets */,
 				3CD74FB71B85BA4000FE5705 /* LaunchScreen.xib */,
@@ -157,6 +163,7 @@
 		4346369EDC7725BD1676E6AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C814FB01B85CA5500E30055 /* MapKit.framework */,
 				1AE9FE3159E536A61F8A18B6 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -224,6 +231,11 @@
 					3CD74FA41B85BA4000FE5705 = {
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = C85KQG8PYQ;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					3CD74FBD1B85BA4000FE5705 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -323,7 +335,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CD74FB11B85BA4000FE5705 /* ViewController.m in Sources */,
 				3CD74FAE1B85BA4000FE5705 /* AppDelegate.m in Sources */,
 				3CD74FAB1B85BA4000FE5705 /* main.m in Sources */,
 			);
