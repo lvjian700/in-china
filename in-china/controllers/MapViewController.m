@@ -1,28 +1,60 @@
-//
-//  MapViewController.m
-//  in-china
-//
-//  Created by Jian Lv on 8/20/15.
-//  Copyright (c) 2015 Pricing. All rights reserved.
-//
-
 #import "MapViewController.h"
 
 @interface MapViewController ()
 
 @end
 
-@implementation MapViewController
+@implementation MapViewController {
+    CLLocationManager *_locationManager;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    _locationManager = [[CLLocationManager alloc] init];
+
+    if (![CLLocationManager locationServicesEnabled]) {
+        NSLog(@"定位服务当前可能尚未打开，请设置打开！");
+        return;
+    }
+    
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+        [_locationManager requestWhenInUseAuthorization];
+    } else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        _locationManager.delegate = self;
+        _locationManager.distanceFilter = kCLDistanceFilterNone;
+        _locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [_locationManager startMonitoringSignificantLocationChanges];
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [_locationManager stopMonitoringSignificantLocationChanges];
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    CLLocation *location = [locations firstObject];
+    CLLocationCoordinate2D coordinate = location.coordinate;
+    NSLog(@"经度：%f,纬度：%f,海拔：%f,航向：%f,行走速度：%f",coordinate.longitude,coordinate.latitude,location.altitude,location.course,location.speed);
+    [_locationManager stopMonitoringSignificantLocationChanges];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"fail to get current location: %@", error);
+}
+
 
 /*
 #pragma mark - Navigation
