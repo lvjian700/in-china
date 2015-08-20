@@ -1,12 +1,6 @@
-//
-//  AppDelegate.m
-//  in-china
-//
-//  Created by Jian Lv on 8/20/15.
-//  Copyright (c) 2015 Pricing. All rights reserved.
-//
-
 #import "AppDelegate.h"
+#import "HelpersMacro.h"
+#import "ConstantMacro.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +10,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(IC_TITLE_COLOR)];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: UIColorFromRGB(0xffffff)}];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
     return YES;
 }
 
