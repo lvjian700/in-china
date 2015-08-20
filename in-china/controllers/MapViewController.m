@@ -14,67 +14,72 @@
     MKUserTrackingBarButtonItem *trackingBarButtonItem = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView];
     self.navigationItem.rightBarButtonItem = trackingBarButtonItem;
 
-    _locationManager = [[CLLocationManager alloc] init];
+    _locationManager = [self createLocationManager];
+    _locationManager.delegate = self;
 
-    if (![CLLocationManager locationServicesEnabled]) {
-        NSLog(@"定位服务当前可能尚未打开，请设置打开！");
-        return;
-    }
-
-    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
-        [_locationManager requestWhenInUseAuthorization];
-    } else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse) {
-        _locationManager.delegate = self;
-        _locationManager.distanceFilter = kCLDistanceFilterNone;
-        _locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
-    }
+    [self requestAuthorizationForLocationManager:_locationManager];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [_locationManager startMonitoringSignificantLocationChanges];
+    [_locationManager startUpdatingLocation];
 }
 
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [_locationManager stopMonitoringSignificantLocationChanges];
+    [_locationManager stopUpdatingLocation];
 }
 
+#pragma mark map view
+- (void)centerMap:(MKMapView *)mapView
+     onCoordinate: (CLLocationCoordinate2D) coordinate {
+    CLLocationDistance radius = 1000;
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, radius * 2, radius * 2);
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    CLLocation *location = [locations firstObject];
-    CLLocationCoordinate2D coordinate = location.coordinate;
-    NSLog(@"经度：%f,纬度：%f,海拔：%f,航向：%f,行走速度：%f",coordinate.longitude,coordinate.latitude,location.altitude,location.course,location.speed);
-    [_locationManager stopMonitoringSignificantLocationChanges];
+    [mapView setRegion:region animated:YES];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"fail to get current location: %@", error);
 }
 
-- (void)mapViewWillStartLocatingUser:(MKMapView *)mapView {
-    // Check authorization status (with class method)
-    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    CLLocation *location = [locations firstObject];
+    [self centerMap:self.mapView onCoordinate:location.coordinate];
 
-    // User has never been asked to decide on location authorization
-    if (status == kCLAuthorizationStatusNotDetermined) {
-        NSLog(@"Requesting when in use auth");
-        [_locationManager requestWhenInUseAuthorization];
+    [_locationManager stopUpdatingLocation];
+}
+
+#pragma mark location
+- (void)mapViewWillStartLocatingUser:(MKMapView *)mapView {
+}
+
+- (void)requestAuthorizationForLocationManager: (CLLocationManager *) locationManager {
+    if (![CLLocationManager locationServicesEnabled]) {
+        NSLog(@"定位服务当前可能尚未打开，请设置打开！");
+        return;
     }
 
-    // User has denied location use (either for this app or for all apps
-    else if (status == kCLAuthorizationStatusDenied) {
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+        NSLog(@"Requesting when in use auth");
+        [locationManager requestWhenInUseAuthorization];
+    } else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
         NSLog(@"Location services denied");
-        // Alert the user and send them to the settings to turn on location
     }
 }
 
+- (CLLocationManager *)createLocationManager {
+    CLLocationManager *manager = [[CLLocationManager alloc] init];
+    manager.distanceFilter = kCLDistanceFilterNone;
+    manager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+
+    return manager;
+}
 /*
 #pragma mark - Navigation
 
