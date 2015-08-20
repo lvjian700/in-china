@@ -1,4 +1,5 @@
 #import "MapViewController.h"
+#import "ICLocationAnnotation.h"
 
 @interface MapViewController ()
 
@@ -7,7 +8,23 @@
 @implementation MapViewController {
     CLLocationManager *_locationManager;
 }
-
+/*
+{
+    "id": "551537e2498ef873a9cf7d86",
+    "name": "西市城购物中心",
+    "contact": {},
+    "location": {
+        "lat": 34.24689701959766,
+        "lng": 108.9025350395719,
+        "distance": 6756,
+        "cc": "CN",
+        "country": "China",
+        "formattedAddress": [
+            "China"
+         ]
+    }
+}
+*/
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -18,6 +35,11 @@
     _locationManager.delegate = self;
 
     [self requestAuthorizationForLocationManager:_locationManager];
+
+    CLLocationCoordinate2D targetCoordinate = CLLocationCoordinate2DMake(34.24689701959766, 108.9025350395719);
+    ICLocationAnnotation *annotation = [ICLocationAnnotation annotationWithTitle:@"西市城购物中心"
+                                                                      coordinate:targetCoordinate];
+    [self.mapView addAnnotation:annotation];
 }
 
 - (void)didReceiveMemoryWarning {
