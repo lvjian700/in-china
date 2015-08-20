@@ -1,0 +1,87 @@
+[
+    {
+        "id": "5315728c498ebbc7879207d5",
+        "name": "西安交通大学第一附属医院",
+        "contact": {},
+        "location": {
+            "lat": 34.22019176562025,
+            "lng": 108.93273449111805,
+            "distance": 6383,
+            "postalCode": "710061",
+            "cc": "CN",
+            "city": "西安市雁塔西路277号",
+            "country": "China",
+            "formattedAddress": [
+                "西安市雁塔西路277号",
+                "710061",
+                "China"
+            ]
+        }
+    },
+    {
+        "id": "4db4d2814b226b343d955013",
+        "name": "西安俪人医院",
+        "contact": {},
+        "location": {
+            "address": "科技路30号",
+            "lat": 34.231762,
+            "lng": 108.901731,
+            "distance": 5222,
+            "cc": "CN",
+            "city": "Xi'an",
+            "state": "Shaanxi",
+            "country": "China",
+            "formattedAddress": [
+                "科技路30号",
+                "Xi'an",
+                "Shaanxi",
+                "China"
+            ]
+        }
+    },
+    {
+        "id": "536c8d2b498ea0963092cd6a",
+        "name": "西安钟楼中医医院",
+        "contact": {},
+        "location": {
+            "address": "钟楼",
+            "lat": 34.26567,
+            "lng": 108.941497,
+            "distance": 10408,
+            "cc": "CN",
+            "city": "Xi'an",
+            "state": "Shaanxi",
+            "country": "China",
+            "formattedAddress": [
+                "钟楼",
+                "Xi'an",
+                "Shaanxi",
+                "China"
+            ]
+        }
+    },
+    {
+        "id": "4ba30ef3f964a520052a38e3",
+        "name": "西京医院",
+        "contact": {
+            "phone": "+862984774114",
+            "formattedPhone": "+86 29 8477 4114"
+        },
+        "location": {
+            "address": "长乐西路15号",
+            "lat": 34.2718483675691,
+            "lng": 108.98286678180811,
+            "distance": 13522,
+            "cc": "CN",
+            "city": "Xi'an",
+            "state": "Shaanxi",
+            "country": "China",
+            "formattedAddress": [
+                "长乐西路15号",
+                "Xi'an",
+                "Shaanxi",
+                "China"
+            ]
+        }
+    }
+]

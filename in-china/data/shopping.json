@@ -1,0 +1,105 @@
+[
+    {
+        "id": "551537e2498ef873a9cf7d86",
+        "name": "西市城购物中心",
+        "contact": {},
+        "location": {
+            "lat": 34.24689701959766,
+            "lng": 108.9025350395719,
+            "distance": 6756,
+            "cc": "CN",
+            "country": "China",
+            "formattedAddress": [
+                "China"
+            ]
+        }
+    },
+    {
+        "id": "4e801509d3e3e208f1ffcba1",
+        "name": "开元商城",
+        "contact": {
+            "phone": "+862987235340",
+            "formattedPhone": "+86 29 8723 5340"
+        },
+        "location": {
+            "address": "解放市场6号",
+            "lat": 34.26020013234963,
+            "lng": 108.94337214823283,
+            "distance": 10042,
+            "postalCode": "710000",
+            "cc": "CN",
+            "city": "Xi'an",
+            "state": "Shaanxi",
+            "country": "China",
+            "formattedAddress": [
+                "解放市场6号",
+                "Xi'an",
+                "Shaanxi, 710000",
+                "China"
+            ]
+        }
+    },
+    {
+        "id": "4f6878b3e4b0b0f93cc57337",
+        "name": "银泰购物广场",
+        "contact": {},
+        "location": {
+            "address": "雁南二路",
+            "lat": 34.20693212880867,
+            "lng": 108.95894900763766,
+            "distance": 8121,
+            "cc": "CN",
+            "city": "Xi'an",
+            "state": "Shaanxi",
+            "country": "China",
+            "formattedAddress": [
+                "雁南二路",
+                "Xi'an",
+                "Shaanxi",
+                "China"
+            ]
+        }
+    },
+    {
+        "id": "536c9c30498e3aeeabdc29f7",
+        "name": "西安",
+        "contact": {},
+        "location": {
+            "lat": 34.26605270908421,
+            "lng": 108.93872938337365,
+            "distance": 10290,
+            "cc": "CN",
+            "country": "China",
+            "formattedAddress": [
+                "China"
+            ]
+        }
+    },
+    {
+        "id": "4b837a72f964a5206b0731e3",
+        "name": "赛格电脑城",
+        "contact": {
+            "phone": "+862985531383",
+            "formattedPhone": "+86 29 8553 1383",
+            "twitter": "amztion"
+        },
+        "location": {
+            "address": "雁塔路中段2号",
+            "crossStreet": "陕西省西安市碑林区雁塔路中段8号",
+            "lat": 34.231638440523895,
+            "lng": 108.96218776702881,
+            "distance": 9371,
+            "postalCode": "710000",
+            "cc": "CN",
+            "city": "Xi'an",
+            "state": "Shaanxi",
+            "country": "China",
+            "formattedAddress": [
+                "雁塔路中段2号 (陕西省西安市碑林区雁塔路中段8号)",
+                "Xi'an",
+                "Shaanxi, 710000",
+                "China"
+            ]
+        }
+    }
+]
