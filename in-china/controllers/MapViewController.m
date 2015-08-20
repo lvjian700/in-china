@@ -11,13 +11,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    MKUserTrackingBarButtonItem *trackingBarButtonItem = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView];
+    self.navigationItem.rightBarButtonItem = trackingBarButtonItem;
+
     _locationManager = [[CLLocationManager alloc] init];
 
     if (![CLLocationManager locationServicesEnabled]) {
         NSLog(@"定位服务当前可能尚未打开，请设置打开！");
         return;
     }
-    
+
     if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
         [_locationManager requestWhenInUseAuthorization];
     } else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse) {
@@ -55,6 +58,22 @@
     NSLog(@"fail to get current location: %@", error);
 }
 
+- (void)mapViewWillStartLocatingUser:(MKMapView *)mapView {
+    // Check authorization status (with class method)
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+
+    // User has never been asked to decide on location authorization
+    if (status == kCLAuthorizationStatusNotDetermined) {
+        NSLog(@"Requesting when in use auth");
+        [_locationManager requestWhenInUseAuthorization];
+    }
+
+    // User has denied location use (either for this app or for all apps
+    else if (status == kCLAuthorizationStatusDenied) {
+        NSLog(@"Location services denied");
+        // Alert the user and send them to the settings to turn on location
+    }
+}
 
 /*
 #pragma mark - Navigation
