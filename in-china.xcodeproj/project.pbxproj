@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14077C511B85DACF00F3D96E /* SpeakHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 14077C501B85DACF00F3D96E /* SpeakHelper.m */; };
 		3CD74FAB1B85BA4000FE5705 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD74FAA1B85BA4000FE5705 /* main.m */; };
 		3CD74FAE1B85BA4000FE5705 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD74FAD1B85BA4000FE5705 /* AppDelegate.m */; };
 		3CD74FB11B85BA4000FE5705 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD74FB01B85BA4000FE5705 /* ViewController.m */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14077C4F1B85DACF00F3D96E /* SpeakHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakHelper.h; sourceTree = "<group>"; };
+		14077C501B85DACF00F3D96E /* SpeakHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakHelper.m; sourceTree = "<group>"; };
 		1AE9FE3159E536A61F8A18B6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C814FAE1B85BF5900E30055 /* HelpersMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelpersMacro.h; sourceTree = "<group>"; };
 		3C814FAF1B85BFA700E30055 /* ConstantMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantMacro.h; sourceTree = "<group>"; };
@@ -67,6 +70,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14077C4E1B85DA8800F3D96E /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				14077C4F1B85DACF00F3D96E /* SpeakHelper.h */,
+				14077C501B85DACF00F3D96E /* SpeakHelper.m */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
 		3C814FAA1B85BEA500E30055 /* macro */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +125,7 @@
 		3CD74FA71B85BA4000FE5705 /* in-china */ = {
 			isa = PBXGroup;
 			children = (
+				14077C4E1B85DA8800F3D96E /* helpers */,
 				3C814FAA1B85BEA500E30055 /* macro */,
 				3C814FAB1B85BEA500E30055 /* models */,
 				3C814FAC1B85BEA500E30055 /* views */,
@@ -323,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14077C511B85DACF00F3D96E /* SpeakHelper.m in Sources */,
 				3CD74FB11B85BA4000FE5705 /* ViewController.m in Sources */,
 				3CD74FAE1B85BA4000FE5705 /* AppDelegate.m in Sources */,
 				3CD74FAB1B85BA4000FE5705 /* main.m in Sources */,
