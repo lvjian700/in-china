@@ -37,7 +37,6 @@
     [self requestAuthorizationForLocationManager:self.locationManager];
 
     self.voiceBottomView.voiceButton.layer.cornerRadius = 6;
-//    self.voiceBottomView.voiceButton.layer.borderWidth = 1.0;
     self.voiceBottomView.voiceButton.layer.masksToBounds = YES;
 }
 
@@ -87,6 +86,8 @@
     [self centerMap:self.mapView
        onCoordinate:twoCoordinates.middleCoordinate
        withDistance:twoCoordinates.distance];
+
+    [self.voiceBottomView displayLocationWithTitle:@"西市城购物中心" distance: twoCoordinates.distance];
 
     [self.locationManager stopUpdatingLocation];
 }
