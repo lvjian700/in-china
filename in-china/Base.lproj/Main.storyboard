@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ebR-Lq-Q0M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ebR-Lq-Q0M">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Maps-->
         <scene sceneID="ufC-wZ-h7g">
@@ -18,23 +22,53 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MUO-KJ-i11" customClass="LocationMapView">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="394"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="4VS-af-Ugb"/>
                                 </connections>
                             </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DaI-wB-gua" customClass="ICVoiceView">
+                                <rect key="frame" x="0.0" y="458" width="320" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3p-H2-MBi">
+                                        <rect key="frame" x="12" y="54" width="296" height="44"/>
+                                        <color key="backgroundColor" red="0.2196078431372549" green="0.47058823529411764" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="WuP-Rx-eak"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                        <state key="normal" title="Voice">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="n3p-H2-MBi" secondAttribute="trailing" constant="12" id="2pB-4q-Ng2"/>
+                                    <constraint firstItem="n3p-H2-MBi" firstAttribute="leading" secondItem="DaI-wB-gua" secondAttribute="leading" constant="12" id="as9-Sd-hHU"/>
+                                    <constraint firstAttribute="bottom" secondItem="n3p-H2-MBi" secondAttribute="bottom" constant="12" id="mrv-yN-FGS"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="voiceButton" destination="n3p-H2-MBi" id="VFy-V7-9h7"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="MUO-KJ-i11" secondAttribute="trailing" id="NO5-E6-Rug"/>
-                            <constraint firstItem="MUO-KJ-i11" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="c6X-s1-RcF"/>
-                            <constraint firstItem="MUO-KJ-i11" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="du0-Uo-pRb"/>
-                            <constraint firstItem="MUO-KJ-i11" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="lSU-7I-Ln7"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="MUO-KJ-i11" secondAttribute="bottom" constant="110" id="Ojt-tG-K4L"/>
+                            <constraint firstItem="MUO-KJ-i11" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="RMM-8f-kOS"/>
+                            <constraint firstAttribute="trailing" secondItem="MUO-KJ-i11" secondAttribute="trailing" id="Shy-j4-41r"/>
+                            <constraint firstItem="DaI-wB-gua" firstAttribute="top" secondItem="MUO-KJ-i11" secondAttribute="bottom" id="eNp-pn-jpo"/>
+                            <constraint firstItem="DaI-wB-gua" firstAttribute="trailing" secondItem="MUO-KJ-i11" secondAttribute="trailing" id="ijE-LF-ReN"/>
+                            <constraint firstItem="MUO-KJ-i11" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="m80-ar-S0n"/>
+                            <constraint firstItem="DaI-wB-gua" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="sMP-WE-0j3"/>
+                            <constraint firstItem="DaI-wB-gua" firstAttribute="leading" secondItem="MUO-KJ-i11" secondAttribute="leading" id="z8w-6F-lzR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Maps" id="Qa9-Uv-Cy4"/>
                     <connections>
                         <outlet property="mapView" destination="MUO-KJ-i11" id="Huj-UK-YJu"/>
+                        <outlet property="voiceBottomView" destination="DaI-wB-gua" id="PRE-GD-lCb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -60,4 +94,9 @@
             <point key="canvasLocation" x="106" y="128"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

@@ -34,6 +34,10 @@
     self.locationManager.delegate = self;
 
     [self requestAuthorizationForLocationManager:self.locationManager];
+
+    self.voiceBottomView.voiceButton.layer.cornerRadius = 6;
+//    self.voiceBottomView.voiceButton.layer.borderWidth = 1.0;
+    self.voiceBottomView.voiceButton.layer.masksToBounds = YES;
 }
 
 - (void)didReceiveMemoryWarning {
