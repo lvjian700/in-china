@@ -14,7 +14,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.shoppings = (NSMutableArray *)[[[JSONDataHelper alloc] init] loadData: @"shopping" ];
+    self.shoppings = (NSMutableArray *)[[[JSONDataHelper alloc] init] loadData: self.targetPlace ];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
