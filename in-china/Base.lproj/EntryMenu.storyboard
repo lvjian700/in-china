@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aZW-wn-FlC">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="fq6-Bo-3GY">
+            <objects>
+                <navigationController id="aZW-wn-FlC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eNm-xC-1ZW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pJ4-cR-9Rp" kind="relationship" relationship="rootViewController" id="dNR-Kc-DqE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ypk-U7-Poe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-396.80000000000001" y="195.96000000000001"/>
+        </scene>
+        <!--In China-->
+        <scene sceneID="fDv-hK-U8C">
+            <objects>
+                <viewController id="pJ4-cR-9Rp" customClass="ICEntryMenuViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Gz-ag-uUd"/>
+                        <viewControllerLayoutGuide type="bottom" id="sYh-rM-she"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GXQ-f1-6sm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="In China" id="4hg-Om-YDv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MoT-gd-BrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40" y="195"/>
+        </scene>
+    </scenes>
+</document>
