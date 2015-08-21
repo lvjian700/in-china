@@ -8,6 +8,7 @@
 
 #import "ICSearchPlacesTableViewController.h"
 #import "PlaceTableViewCell.h"
+#import "JSONDataHelper.h"
 
 @interface ICSearchPlacesTableViewController ()
 
@@ -17,6 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.shoppings = (NSMutableArray *)[[[JSONDataHelper alloc] init] loadData: @"shopping" ];
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -37,13 +41,15 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.shoppings.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellID = @"PlaceTableViewCellID";
     PlaceTableViewCell *cell = (PlaceTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
-    
+    NSDictionary *item = [self.shoppings objectAtIndex: indexPath.row];
+   
+    [cell.title setText: item[@"name"]];
     return cell;
 }
 

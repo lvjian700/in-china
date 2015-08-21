@@ -10,4 +10,6 @@
 
 @interface ICSearchPlacesTableViewController : UITableViewController
 
+@property (strong, nonatomic) NSMutableArray *shoppings;
+
 @end
