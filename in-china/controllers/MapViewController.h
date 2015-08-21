@@ -5,4 +5,6 @@
 
 @property (weak, nonatomic) IBOutlet LocationMapView *mapView;
 
+@property(nonatomic, strong) CLLocationManager *locationManager;
+@property(nonatomic, strong) CLLocation *currentLocation;
 @end

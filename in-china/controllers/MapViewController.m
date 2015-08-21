@@ -1,13 +1,12 @@
 #import "MapViewController.h"
 #import "ICLocationAnnotation.h"
+#import "CoordinatesHelper.h"
 
 @interface MapViewController ()
 
 @end
 
-@implementation MapViewController {
-    CLLocationManager *_locationManager;
-}
+@implementation MapViewController
 /*
 {
     "id": "551537e2498ef873a9cf7d86",
@@ -31,15 +30,10 @@
     MKUserTrackingBarButtonItem *trackingBarButtonItem = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView];
     self.navigationItem.rightBarButtonItem = trackingBarButtonItem;
 
-    _locationManager = [self createLocationManager];
-    _locationManager.delegate = self;
+    self.locationManager = [self createLocationManager];
+    self.locationManager.delegate = self;
 
-    [self requestAuthorizationForLocationManager:_locationManager];
-
-    CLLocationCoordinate2D targetCoordinate = CLLocationCoordinate2DMake(34.24689701959766, 108.9025350395719);
-    ICLocationAnnotation *annotation = [ICLocationAnnotation annotationWithTitle:@"西市城购物中心"
-                                                                      coordinate:targetCoordinate];
-    [self.mapView addAnnotation:annotation];
+    [self requestAuthorizationForLocationManager:self.locationManager];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,20 +42,20 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [_locationManager startUpdatingLocation];
+    [self.locationManager startUpdatingLocation];
 }
 
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [_locationManager stopUpdatingLocation];
+    [self.locationManager stopUpdatingLocation];
 }
 
 #pragma mark map view
 - (void)centerMap:(MKMapView *)mapView
-     onCoordinate: (CLLocationCoordinate2D) coordinate {
-    CLLocationDistance radius = 1000;
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, radius * 2, radius * 2);
+     onCoordinate: (CLLocationCoordinate2D) coordinate
+     withDistance: (CLLocationDistance) radius {
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, radius, radius);
 
     [mapView setRegion:region animated:YES];
 }
@@ -71,10 +65,25 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    CLLocation *location = [locations firstObject];
-    [self centerMap:self.mapView onCoordinate:location.coordinate];
+    self.currentLocation = [locations firstObject];
 
-    [_locationManager stopUpdatingLocation];
+    [self centerMap:self.mapView
+       onCoordinate:self.currentLocation.coordinate
+       withDistance:1000];
+
+    CLLocationCoordinate2D targetCoordinate = CLLocationCoordinate2DMake(34.24689701959766, 108.9025350395719);
+    ICLocationAnnotation *annotation = [ICLocationAnnotation annotationWithTitle:@"西市城购物中心"
+                                                                      coordinate:targetCoordinate];
+    [self.mapView addAnnotation:annotation];
+
+    CoordinatesHelper *twoCoordinates = [[CoordinatesHelper alloc] initWithCoordinate: self.currentLocation.coordinate
+                                    andCoordinate:targetCoordinate];
+
+    [self centerMap:self.mapView
+       onCoordinate:twoCoordinates.middleCoordinate
+       withDistance:twoCoordinates.distance];
+
+    [self.locationManager stopUpdatingLocation];
 }
 
 #pragma mark location
