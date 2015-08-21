@@ -1,6 +1,7 @@
 #import "MapViewController.h"
 #import "ICLocationAnnotation.h"
 #import "CoordinatesHelper.h"
+#import "SpeakHelper.h"
 
 @interface MapViewController ()
 
@@ -115,6 +116,13 @@
 
     return manager;
 }
+
+#pragma mark sound
+
+- (IBAction)playSoundAction:(id)sender {
+    [SpeakHelper speak:@"西市城购物中心"];
+}
+
 /*
 #pragma mark - Navigation
 
