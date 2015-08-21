@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4xJ-wE-Qhs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4xJ-wE-Qhs">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="74"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vq3-w5-Gff" id="lMJ-Jf-BWX">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="73.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7PM-s2-78O">
@@ -41,15 +41,27 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgi-6m-m72">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgi-6m-m72">
                                             <rect key="frame" x="77" y="27" width="161" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                             <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="shopping tag" translatesAutoresizingMaskIntoConstraints="NO" id="UbO-kR-yjI">
+                                            <rect key="frame" x="75" y="48" width="22" height="18"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="food tag" translatesAutoresizingMaskIntoConstraints="NO" id="5Sc-N9-xIS">
+                                            <rect key="frame" x="103" y="48" width="22" height="18"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="movie tag" translatesAutoresizingMaskIntoConstraints="NO" id="AZo-lY-5ma">
+                                            <rect key="frame" x="133" y="48" width="22" height="18"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="7PM-s2-78O" firstAttribute="centerY" secondItem="lMJ-Jf-BWX" secondAttribute="centerY" id="6u1-RQ-SvA"/>
+                                        <constraint firstItem="AZo-lY-5ma" firstAttribute="leading" secondItem="UbO-kR-yjI" secondAttribute="trailing" constant="36" id="Sum-BW-GoX"/>
+                                        <constraint firstItem="UbO-kR-yjI" firstAttribute="top" secondItem="Mgi-6m-m72" secondAttribute="bottom" id="dOu-3e-ksc"/>
+                                        <constraint firstItem="5Sc-N9-xIS" firstAttribute="leading" secondItem="UbO-kR-yjI" secondAttribute="trailing" constant="6" id="jzz-7g-M9D"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="7PM-s2-78O" secondAttribute="leading" id="k3y-Uh-jpr"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -88,4 +100,9 @@
             <point key="canvasLocation" x="-2.6666666666666665" y="452.50666666666666"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="food tag" width="18" height="18"/>
+        <image name="movie tag" width="18" height="18"/>
+        <image name="shopping tag" width="18" height="18"/>
+    </resources>
 </document>
