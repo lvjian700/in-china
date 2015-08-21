@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4xJ-wE-Qhs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4xJ-wE-Qhs">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
         </mutableArray>
     </customFonts>
@@ -25,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="74"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vq3-w5-Gff" id="lMJ-Jf-BWX">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="73.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7PM-s2-78O">
@@ -35,38 +34,46 @@
                                                 <constraint firstAttribute="height" constant="65" id="liM-Qh-RnR"/>
                                             </constraints>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shopping tag" translatesAutoresizingMaskIntoConstraints="NO" id="UbO-kR-yjI">
+                                            <rect key="frame" x="75" y="45" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="VPd-E6-dGM"/>
+                                                <constraint firstAttribute="width" constant="20" id="y5d-u5-ix7"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food tag" translatesAutoresizingMaskIntoConstraints="NO" id="5Sc-N9-xIS">
+                                            <rect key="frame" x="103" y="45" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="6z2-GC-ofU"/>
+                                                <constraint firstAttribute="width" constant="20" id="PHb-FH-KK3"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie tag" translatesAutoresizingMaskIntoConstraints="NO" id="AZo-lY-5ma">
+                                            <rect key="frame" x="133" y="45" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="PYi-87-nWb"/>
+                                                <constraint firstAttribute="height" constant="20" id="Tm3-Qp-H9g"/>
+                                            </constraints>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7e-l5-s6a">
-                                            <rect key="frame" x="77" y="7" width="161" height="21"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <rect key="frame" x="77" y="8" width="161" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                            <color key="textColor" red="0.22352941176470589" green="0.22352941176470589" blue="0.22352941176470589" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgi-6m-m72">
-                                            <rect key="frame" x="77" y="27" width="161" height="21"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                            <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="shopping tag" translatesAutoresizingMaskIntoConstraints="NO" id="UbO-kR-yjI">
-                                            <rect key="frame" x="75" y="48" width="22" height="18"/>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="food tag" translatesAutoresizingMaskIntoConstraints="NO" id="5Sc-N9-xIS">
-                                            <rect key="frame" x="103" y="48" width="22" height="18"/>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="movie tag" translatesAutoresizingMaskIntoConstraints="NO" id="AZo-lY-5ma">
-                                            <rect key="frame" x="133" y="48" width="22" height="18"/>
-                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="7PM-s2-78O" firstAttribute="centerY" secondItem="lMJ-Jf-BWX" secondAttribute="centerY" id="6u1-RQ-SvA"/>
-                                        <constraint firstItem="AZo-lY-5ma" firstAttribute="leading" secondItem="UbO-kR-yjI" secondAttribute="trailing" constant="36" id="Sum-BW-GoX"/>
-                                        <constraint firstItem="UbO-kR-yjI" firstAttribute="top" secondItem="Mgi-6m-m72" secondAttribute="bottom" id="dOu-3e-ksc"/>
-                                        <constraint firstItem="5Sc-N9-xIS" firstAttribute="leading" secondItem="UbO-kR-yjI" secondAttribute="trailing" constant="6" id="jzz-7g-M9D"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="UbO-kR-yjI" secondAttribute="bottom" id="Cnf-UA-LWA"/>
+                                        <constraint firstItem="UbO-kR-yjI" firstAttribute="leading" secondItem="7PM-s2-78O" secondAttribute="trailing" constant="6" id="D7u-EW-rOs"/>
+                                        <constraint firstItem="AZo-lY-5ma" firstAttribute="leading" secondItem="5Sc-N9-xIS" secondAttribute="trailing" constant="10" id="cdn-Mc-x4x"/>
+                                        <constraint firstItem="AZo-lY-5ma" firstAttribute="bottom" secondItem="5Sc-N9-xIS" secondAttribute="bottom" id="f7d-Xz-83t"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="7PM-s2-78O" secondAttribute="leading" id="k3y-Uh-jpr"/>
+                                        <constraint firstItem="5Sc-N9-xIS" firstAttribute="bottom" secondItem="UbO-kR-yjI" secondAttribute="bottom" id="uMh-30-aWd"/>
+                                        <constraint firstItem="5Sc-N9-xIS" firstAttribute="leading" secondItem="UbO-kR-yjI" secondAttribute="trailing" constant="8" id="xeo-on-3ej"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="briefDesc" destination="Mgi-6m-m72" id="yFi-WI-tUh"/>
                                     <outlet property="photo" destination="7PM-s2-78O" id="BfZ-ac-Rd3"/>
                                     <outlet property="title" destination="q7e-l5-s6a" id="Vyx-IE-T59"/>
                                 </connections>
