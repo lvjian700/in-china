@@ -3,6 +3,7 @@
 #import "JSONDataHelper.h"
 #import "MapViewController.h"
 #import "HelpersMacro.h"
+#import "ConstantMacro.h"
 
 @interface ICSearchPlacesTableViewController ()
 
@@ -14,8 +15,7 @@
     [super viewDidLoad];
     
     self.shoppings = (NSMutableArray *)[[[JSONDataHelper alloc] init] loadData: @"shopping" ];
-    
-    
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -25,7 +25,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -49,8 +48,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    MapViewController *controller = ControllerOfStoryBoard(@"Main", @"MapViewController");
-    [self.navigationController pushViewController:controller animated:YES];
+
+    MapViewController *mapController = ControllerOfStoryBoard(@"Main", @"MapViewController");
+    mapController.targetPlace = [self.shoppings objectAtIndex:indexPath.row];
+
+    [self.navigationController pushViewController:mapController animated:YES];
 }
 
 

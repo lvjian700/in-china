@@ -1,7 +1,9 @@
+#import <AFNetworking/AFURLSessionManager.h>
 #import "MapViewController.h"
 #import "ICLocationAnnotation.h"
 #import "CoordinatesHelper.h"
 #import "SpeakHelper.h"
+#import "ConstantMacro.h"
 
 @interface MapViewController ()
 
@@ -38,6 +40,8 @@
 
     self.voiceBottomView.voiceButton.layer.cornerRadius = 6;
     self.voiceBottomView.voiceButton.layer.masksToBounds = YES;
+
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,18 +74,24 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     self.currentLocation = [locations firstObject];
+    [self searchPlace:self.targetPlace];
+    [self.locationManager stopUpdatingLocation];
+}
+
+- (void)searchPlace:(NSDictionary *) place {
+    NSDictionary *location = [place objectForKey:@"location"];
+    
+    CLLocationCoordinate2D targetCoordinate = CLLocationCoordinate2DMake(1,1);
+    ICLocationAnnotation *annotation = [ICLocationAnnotation annotationWithTitle:@"西市城购物中心"
+                                                                      coordinate:targetCoordinate];
+    [self.mapView addAnnotation:annotation];
 
     [self centerMap:self.mapView
        onCoordinate:self.currentLocation.coordinate
        withDistance:1000];
 
-    CLLocationCoordinate2D targetCoordinate = CLLocationCoordinate2DMake(34.24689701959766, 108.9025350395719);
-    ICLocationAnnotation *annotation = [ICLocationAnnotation annotationWithTitle:@"西市城购物中心"
-                                                                      coordinate:targetCoordinate];
-    [self.mapView addAnnotation:annotation];
-
     CoordinatesHelper *twoCoordinates = [[CoordinatesHelper alloc] initWithCoordinate: self.currentLocation.coordinate
-                                    andCoordinate:targetCoordinate];
+                                                                        andCoordinate:targetCoordinate];
 
     [self centerMap:self.mapView
        onCoordinate:twoCoordinates.middleCoordinate
@@ -89,7 +99,7 @@
 
     [self.voiceBottomView displayLocationWithTitle:@"西市城购物中心" distance: twoCoordinates.distance];
 
-    [self.locationManager stopUpdatingLocation];
+
 }
 
 #pragma mark location
