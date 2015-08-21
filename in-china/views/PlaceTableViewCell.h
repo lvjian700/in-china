@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface PlaceTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *photo;
+@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UILabel *briefDesc;
 
 @end
