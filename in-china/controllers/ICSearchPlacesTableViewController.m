@@ -9,6 +9,7 @@
 #import "ICSearchPlacesTableViewController.h"
 #import "PlaceTableViewCell.h"
 #import "JSONDataHelper.h"
+#import "MapViewController.h"
 
 @interface ICSearchPlacesTableViewController ()
 
@@ -50,8 +51,15 @@
     NSDictionary *item = [self.shoppings objectAtIndex: indexPath.row];
    
     [cell.title setText: item[@"name"]];
+    
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    MapViewController *controller = [[MapViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 
 /*
 // Override to support conditional editing of the table view.
