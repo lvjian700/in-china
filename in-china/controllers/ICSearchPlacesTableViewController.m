@@ -1,15 +1,8 @@
-//
-//  ICSearchPlacesTableViewController.m
-//  in-china
-//
-//  Created by Jian Lv on 8/21/15.
-//  Copyright © 2015 Pricing. All rights reserved.
-//
-
 #import "ICSearchPlacesTableViewController.h"
 #import "PlaceTableViewCell.h"
 #import "JSONDataHelper.h"
 #import "MapViewController.h"
+#import "HelpersMacro.h"
 
 @interface ICSearchPlacesTableViewController ()
 
@@ -56,7 +49,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    MapViewController *controller = [[MapViewController alloc] init];
+    MapViewController *controller = ControllerOfStoryBoard(@"Main", @"MapViewController");
     [self.navigationController pushViewController:controller animated:YES];
 }
 
