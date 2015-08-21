@@ -4,6 +4,7 @@
 #import "MapViewController.h"
 #import "HelpersMacro.h"
 #import "ConstantMacro.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ICSearchPlacesTableViewController ()
 
@@ -43,6 +44,8 @@
     NSDictionary *item = [self.shoppings objectAtIndex: indexPath.row];
    
     [cell.title setText: item[@"name"]];
+    cell.photo.image = [UIImage imageNamed:item[@"name"]];
+    cell.photo.layer.masksToBounds = YES;
     
     return cell;
 }
