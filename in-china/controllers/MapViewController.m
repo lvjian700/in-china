@@ -65,7 +65,7 @@
      withDistance: (CLLocationDistance) radius {
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, radius * 1.6, radius * 1.6);
 
-    [mapView setRegion:region animated:YES];
+    [mapView setRegion:region animated:NO];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
