@@ -7,6 +7,9 @@
 //
 
 #import "ICEntryMenuViewController.h"
+#import "ICSearchPlacesTableViewController.h"
+#import "HelpersMacro.h"
+#import "ConstantMacro.h"
 
 @interface ICEntryMenuViewController ()
 
@@ -22,6 +25,22 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)goShopping:(UIButton *)sender {
+    ICSearchPlacesTableViewController *searchPlacesController = ControllerOfStoryBoard(@"Places", @"ICSearchPlacesTableViewController");
+    
+    searchPlacesController.targetPlace = @"shopping";
+    
+    [self.navigationController pushViewController:searchPlacesController animated:YES];
+}
+
+- (IBAction)goHospital:(UIButton *)sender {
+    ICSearchPlacesTableViewController *searchPlacesController = ControllerOfStoryBoard(@"Places", @"ICSearchPlacesTableViewController");
+    
+    searchPlacesController.targetPlace = @"hospital";
+    
+    [self.navigationController pushViewController:searchPlacesController animated:YES];
 }
 
 /*

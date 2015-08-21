@@ -29,7 +29,7 @@
         <!--In China-->
         <scene sceneID="fDv-hK-U8C">
             <objects>
-                <viewController id="pJ4-cR-9Rp" customClass="ICEntryMenuViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ICEntryMenuViewController" id="pJ4-cR-9Rp" customClass="ICEntryMenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Gz-ag-uUd"/>
                         <viewControllerLayoutGuide type="bottom" id="sYh-rM-she"/>
@@ -56,6 +56,24 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSN-jL-YLl">
+                                <rect key="frame" x="36" y="64" width="60" height="84"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goShopping:" destination="pJ4-cR-9Rp" eventType="touchUpInside" id="2sA-zY-m3Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVn-B9-Dgu">
+                                <rect key="frame" x="225" y="72" width="59" height="76"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goHospital:" destination="pJ4-cR-9Rp" eventType="touchUpInside" id="uwM-Kb-eDy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
