@@ -63,7 +63,7 @@
 - (void)centerMap:(MKMapView *)mapView
      onCoordinate: (CLLocationCoordinate2D) coordinate
      withDistance: (CLLocationDistance) radius {
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, radius, radius);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, radius * 1.6, radius * 1.6);
 
     [mapView setRegion:region animated:YES];
 }
@@ -80,9 +80,13 @@
 
 - (void)searchPlace:(NSDictionary *) place {
     NSDictionary *location = [place objectForKey:@"location"];
-    
-    CLLocationCoordinate2D targetCoordinate = CLLocationCoordinate2DMake(1,1);
-    ICLocationAnnotation *annotation = [ICLocationAnnotation annotationWithTitle:@"西市城购物中心"
+
+    NSString *placeName = [place objectForKey:@"name"];
+    double lat = [[location objectForKey:@"lat"] doubleValue];
+    double lng = [[location objectForKey:@"lng"] doubleValue];
+
+    CLLocationCoordinate2D targetCoordinate = CLLocationCoordinate2DMake(lat, lng);
+    ICLocationAnnotation *annotation = [ICLocationAnnotation annotationWithTitle:placeName
                                                                       coordinate:targetCoordinate];
     [self.mapView addAnnotation:annotation];
 
@@ -97,7 +101,7 @@
        onCoordinate:twoCoordinates.middleCoordinate
        withDistance:twoCoordinates.distance];
 
-    [self.voiceBottomView displayLocationWithTitle:@"西市城购物中心" distance: twoCoordinates.distance];
+    [self.voiceBottomView displayLocationWithTitle:placeName distance: twoCoordinates.distance];
 
 
 }
@@ -131,7 +135,7 @@
 #pragma mark sound
 
 - (IBAction)playSoundAction:(id)sender {
-    [SpeakHelper speak:@"西市城购物中心"];
+    [SpeakHelper speak:[self.targetPlace objectForKey:@"name"]];
 }
 
 /*
